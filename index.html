@@ -79,14 +79,14 @@ input{
 <div class="tools">
 
 <div class="box">
-<h2>🖼️ Image Compressor</h2>
-<input type="file" id="compressInput"
+  <h2>🖼️ Image Compressor</h2>
+  input type="file" id="compressInput"
 accept="image/*">
-<br><br>
-<button
+  <br><br>
+  <button
 oneclik="compressImage()">Compress
-image</button>button>
-<p id="compressResult"></p>
+image</button>
+  <p id="compressResult"></p>
 </div>
 
 <div class="box">
@@ -158,6 +158,50 @@ function calculateAge(){
 </html>
 <script>
 function compressImage() {
+  const input = document.getElementById("compressInput");
+
+  if (!input.files.length) {
+    alert("Please select an image first.");
+    return;
+  }
+
+  const file = input.files[0];
+  const reader = new FileReader();
+
+  reader.onload = function(e) {
+    const img = new Image();
+
+    img.onload = function() {
+      const canvas = document.createElement("canvas");
+      const ctx = canvas.getContext("2d");
+
+      const maxWidth = 1200;
+      const scale = Math.min(1, maxWidth / img.width);
+
+      canvas.width = img.width * scale;
+      canvas.height = img.height * scale;
+
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+      canvas.toBlob(function(blob) {
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+
+        link.href = url;
+        link.download = "quicktools-compressed.jpg";
+        link.innerText = "Download Compressed Image";
+
+        document.getElementById("compressResult").innerHTML = "";
+        document.getElementById("compressResult").appendChild(link);
+      }, "image/jpeg", 0.7);
+    };
+
+    img.src = e.target.result;
+  };
+
+  reader.readAsDataURL(file);
+}
+</script>
   const input = document.getElementById("compressInput");
 
   if (!input.files.length) {

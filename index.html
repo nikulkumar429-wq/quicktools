@@ -134,8 +134,23 @@ Open Tool
 
 <div class="box">
 <h2>🔄 Unit Converter</h2>
-<p>Convert different units easily.</p>
-<button>Open Tool</button>
+<input type="number" id="unitValue" placeholder="Enter value">
+<br><br>
+
+<select id="unitType">
+<option value="km-miles">Kilometers → Miles</option>
+<option value="miles-km">Miles → Kilometers</option>
+<option value="kg-lb">Kilograms → Pounds</option>
+<option value="lb-kg">Pounds → Kilograms</option>
+<option value="cm-m">Centimeters → Meters</option>
+<option value="m-cm">Meters → Centimeters</option>
+</select>
+
+<br><br>
+
+<button onclick="convertUnit()">Convert</button>
+
+<p id="unitResult"></p>
 </div>
 
 </div>
@@ -329,6 +344,27 @@ function resizeImage(){
   };
 
   reader.readAsDataURL(input.files[0]);
+}
+  function convertUnit(){
+  const value = parseFloat(document.getElementById("unitValue").value);
+  const type = document.getElementById("unitType").value;
+  const result = document.getElementById("unitResult");
+
+  if(isNaN(value)){
+    result.innerText = "Please enter a value.";
+    return;
+  }
+
+  let answer;
+
+  if(type === "km-miles") answer = value * 0.621371;
+  if(type === "miles-km") answer = value * 1.60934;
+  if(type === "kg-lb") answer = value * 2.20462;
+  if(type === "lb-kg") answer = value * 0.453592;
+  if(type === "cm-m") answer = value / 100;
+  if(type === "m-cm") answer = value * 100;
+
+  result.innerText = "Result: " + answer.toFixed(2);
 }
 </script>
 

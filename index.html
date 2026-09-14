@@ -5,9 +5,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>QuickTools - Free Online Tools | Image Compressor, Resizer & Age Calculator</title>
+<title>QuickTools - Free Online Tools | Image Compressor, Resizer, Age Calculator</title>
 
-<meta name="google-site-verification" content="Y9iJ5ovFccLJ6lYFEpRNvwfYgxtbGjfPBuMOFvepRaY" />
+<meta name="google-site-verification" content="Y9iJ5ovFccLJ6lYFEpRNvwfYgxtbGjfPBuMOFvepRaY">
 
 <meta name="description" content="QuickTools provides free online tools including image compressor, image resizer, age calculator and unit converter. Fast, simple and easy to use.">
 
@@ -24,11 +24,52 @@
 
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "QuickTools",
-  "url": "https://nikulkumar429-wq.github.io/quicktools/",
-  "description": "Free online tools including image compressor, image resizer, age calculator and unit converter."
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"QuickTools",
+  "url":"https://nikulkumar429-wq.github.io/quicktools/",
+  "description":"Free online tools including image compressor, image resizer, age calculator and unit converter."
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"Is QuickTools free to use?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Yes. QuickTools provides free browser-based online tools."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Can I compress an image online?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Yes. Select an image in the Image Compressor and click Compress Image."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Can I resize an image online?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Yes. Select an image, enter the required width and height, and click Resize Image."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"How does the Age Calculator work?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"The Age Calculator calculates the difference between the entered date of birth and today's date."
+      }
+    }
+  ]
 }
 </script>
 
@@ -53,13 +94,13 @@ line-height:1.6;
 header{
 background:linear-gradient(135deg,#111827,#2563eb);
 color:white;
-padding:50px 15px;
+padding:55px 15px;
 text-align:center;
 }
 
 header h1{
 margin:0;
-font-size:44px;
+font-size:46px;
 }
 
 header p{
@@ -69,20 +110,22 @@ opacity:.92;
 }
 
 nav{
-background:#ffffff;
+background:white;
 padding:14px 10px;
 box-shadow:0 2px 10px rgba(0,0,0,.08);
 position:sticky;
 top:0;
-z-index:10;
+z-index:20;
+text-align:center;
 }
 
 nav a{
 color:#2563eb;
 text-decoration:none;
 font-weight:bold;
-margin:0 10px;
+margin:5px 9px;
 font-size:14px;
+display:inline-block;
 }
 
 nav a:hover{
@@ -94,15 +137,20 @@ display:flex;
 flex-wrap:wrap;
 justify-content:center;
 gap:22px;
-padding:35px 15px;
+padding:40px 15px;
 }
 
 .box{
 background:white;
-width:260px;
-padding:25px;
+width:270px;
+padding:27px;
 border-radius:18px;
 box-shadow:0 5px 20px rgba(0,0,0,.10);
+transition:transform .2s;
+}
+
+.box:hover{
+transform:translateY(-3px);
 }
 
 .box h2{
@@ -113,17 +161,18 @@ color:#111827;
 
 .box p{
 color:#6b7280;
-min-height:65px;
+min-height:72px;
 }
 
 button{
-padding:11px 20px;
+padding:12px 21px;
 background:#2563eb;
 color:white;
 border:0;
 border-radius:9px;
 cursor:pointer;
 font-size:15px;
+font-weight:bold;
 }
 
 button:hover{
@@ -131,7 +180,7 @@ background:#1d4ed8;
 }
 
 input,select{
-padding:10px;
+padding:11px;
 border:1px solid #d1d5db;
 border-radius:8px;
 max-width:100%;
@@ -141,10 +190,11 @@ font-size:15px;
 .tool-section{
 background:white;
 margin:25px auto 40px;
-padding:30px;
-max-width:650px;
+padding:32px;
+max-width:680px;
 border-radius:18px;
 box-shadow:0 5px 20px rgba(0,0,0,.10);
+text-align:center;
 }
 
 .tool-section h2{
@@ -166,11 +216,12 @@ color:#111827;
 .download{
 display:inline-block;
 margin-top:15px;
-padding:11px 20px;
+padding:12px 20px;
 background:#2563eb;
 color:white;
 text-decoration:none;
 border-radius:9px;
+font-weight:bold;
 }
 
 .download:hover{
@@ -181,7 +232,7 @@ background:#1d4ed8;
 background:white;
 max-width:900px;
 margin:30px auto;
-padding:30px;
+padding:32px;
 border-radius:18px;
 box-shadow:0 5px 20px rgba(0,0,0,.08);
 text-align:left;
@@ -190,10 +241,12 @@ text-align:left;
 .info-section h2{
 color:#2563eb;
 text-align:center;
+margin-top:0;
 }
 
 .info-section h3{
 color:#111827;
+margin-top:25px;
 }
 
 .faq{
@@ -209,7 +262,7 @@ font-size:18px;
 footer{
 background:#111827;
 color:white;
-padding:30px 15px;
+padding:32px 15px;
 margin-top:40px;
 text-align:center;
 }
@@ -230,9 +283,13 @@ header h1{
 font-size:36px;
 }
 
+header{
+padding:45px 12px;
+}
+
 nav a{
-display:inline-block;
-margin:5px;
+font-size:13px;
+margin:4px;
 }
 
 .tools{
@@ -241,10 +298,16 @@ padding:25px 12px;
 
 .box{
 width:100%;
-max-width:350px;
+max-width:360px;
 }
 
 .tool-section{
+margin-left:12px;
+margin-right:12px;
+padding:26px 18px;
+}
+
+.info-section{
 margin-left:12px;
 margin-right:12px;
 padding:25px 18px;
@@ -270,11 +333,8 @@ padding:25px 18px;
 <nav>
 
 <a href="#compress">Image Compressor</a>
-
 <a href="#resize">Image Resizer</a>
-
 <a href="#age">Age Calculator</a>
-
 <a href="#unit">Unit Converter</a>
 
 </nav>
@@ -283,12 +343,14 @@ padding:25px 18px;
 <main>
 
 
+<!-- TOOL CARDS -->
+
 <section class="tools">
 
 
 <div class="box">
 
-<h2>🖼️ Free Image Compressor</h2>
+<h2>🖼️ Image Compressor</h2>
 
 <p>
 Compress images online for free and reduce image file size
@@ -304,7 +366,7 @@ Open Tool
 
 <div class="box">
 
-<h2>📏 Free Image Resizer</h2>
+<h2>📏 Image Resizer</h2>
 
 <p>
 Resize images online by entering your required width
@@ -320,11 +382,11 @@ Open Tool
 
 <div class="box">
 
-<h2>🧮 Free Age Calculator</h2>
+<h2>🧮 Age Calculator</h2>
 
 <p>
-Calculate your exact age in years, months and days
-using your date of birth.
+Calculate your age in years, months and days using
+your date of birth.
 </p>
 
 <button onclick="document.getElementById('age').scrollIntoView()">
@@ -336,11 +398,11 @@ Open Tool
 
 <div class="box">
 
-<h2>🔄 Free Unit Converter</h2>
+<h2>🔄 Unit Converter</h2>
 
 <p>
-Convert kilometers, miles, kilograms, pounds,
-centimeters and meters quickly.
+Convert common units including distance, weight and length
+quickly and easily.
 </p>
 
 <button onclick="document.getElementById('unit').scrollIntoView()">
@@ -360,12 +422,16 @@ Open Tool
 <h2>🖼️ Free Image Compressor Online</h2>
 
 <p class="tool-description">
-Use our free image compressor to reduce the file size of
-your images directly in your browser. Your image is processed
-on your device and is not intentionally stored by QuickTools.
+Reduce the file size of your image with our free online
+image compressor. Select an image and compress it directly
+in your browser.
 </p>
 
-<input type="file" id="compressInput" accept="image/*">
+<input
+type="file"
+id="compressInput"
+accept="image/*"
+>
 
 <br><br>
 
@@ -385,15 +451,19 @@ Compress Image
 <h2>📏 Free Image Resizer Online</h2>
 
 <p class="tool-description">
-Resize your image to any required width and height.
-This simple image resizer works directly in your browser.
+Resize your image to a custom width and height.
+Choose an image, enter the dimensions and create your resized image.
 </p>
 
-<input type="file" id="resizeInput" accept="image/*">
+<input
+type="file"
+id="resizeInput"
+accept="image/*"
+>
 
 <br><br>
 
-<label>Width:</label>
+<label for="resizeWidth">Width:</label>
 
 <br>
 
@@ -401,11 +471,12 @@ This simple image resizer works directly in your browser.
 type="number"
 id="resizeWidth"
 placeholder="Enter width"
+min="1"
 >
 
 <br><br>
 
-<label>Height:</label>
+<label for="resizeHeight">Height:</label>
 
 <br>
 
@@ -413,6 +484,7 @@ placeholder="Enter width"
 type="number"
 id="resizeHeight"
 placeholder="Enter height"
+min="1"
 >
 
 <br><br>
@@ -433,11 +505,14 @@ Resize Image
 <h2>🧮 Free Age Calculator</h2>
 
 <p class="tool-description">
-Enter your date of birth to calculate your age in
-years, months and days.
+Enter your date of birth to calculate your current age
+in years, months and days.
 </p>
 
-<input type="date" id="dob">
+<input
+type="date"
+id="dob"
+>
 
 <br><br>
 
@@ -457,8 +532,8 @@ Calculate Age
 <h2>🔄 Free Unit Converter</h2>
 
 <p class="tool-description">
-Convert common units quickly and easily using our free
-online unit converter.
+Convert common units quickly using our free online
+unit converter.
 </p>
 
 <input
@@ -508,50 +583,102 @@ Convert
 </section>
 
 
-<!-- SEO INFORMATION -->
+<!-- ABOUT / SEO CONTENT -->
 
 <section class="info-section">
 
 <h2>Free Online Tools at QuickTools</h2>
 
 <p>
-QuickTools is a simple collection of free online tools
-designed to help with everyday tasks. You can compress images,
-resize images, calculate age and convert common units without
-installing additional software.
+QuickTools is a collection of simple and free online tools
+for everyday tasks. The website provides browser-based tools
+for compressing images, resizing images, calculating age and
+converting common units.
 </p>
 
-<h3>Image Compressor</h3>
-
 <p>
-Our free image compressor helps reduce image file size.
-Smaller images can be easier to share and upload. Select an
-image and use the compression tool directly in your browser.
+Our goal is to make useful tools easy to access without
+requiring complicated software or installations.
 </p>
 
-<h3>Image Resizer</h3>
+
+<h3>Free Image Compressor</h3>
 
 <p>
-The QuickTools image resizer lets you enter a custom width
-and height and resize an image quickly. It can be useful when
-you need an image at a specific size.
+The QuickTools Image Compressor helps reduce the size of
+image files. Smaller image files can be easier to upload,
+share and use on websites.
 </p>
 
-<h3>Age Calculator</h3>
-
 <p>
-Use the QuickTools age calculator to calculate your age based
-on your date of birth. The result shows your age in years,
-months and days.
+Select an image and click the Compress Image button.
+The tool creates a compressed JPEG image that you can save
+to your device.
 </p>
 
-<h3>Unit Converter</h3>
+
+<h3>Free Image Resizer</h3>
 
 <p>
-The unit converter supports common conversions such as
+The QuickTools Image Resizer allows you to change the width
+and height of an image. Enter your desired dimensions and
+the tool creates a resized image.
+</p>
+
+
+<h3>Free Age Calculator</h3>
+
+<p>
+The QuickTools Age Calculator calculates age from a date of
+birth. It provides the result in years, months and days.
+</p>
+
+
+<h3>Free Unit Converter</h3>
+
+<p>
+The Unit Converter supports common conversions including
 kilometers to miles, miles to kilometers, kilograms to pounds,
 pounds to kilograms, centimeters to meters and meters to
 centimeters.
+</p>
+
+</section>
+
+
+<!-- HOW TO USE -->
+
+<section class="info-section">
+
+<h2>How to Use QuickTools</h2>
+
+<h3>How to compress an image</h3>
+
+<p>
+Open the Image Compressor, choose an image from your device,
+then click Compress Image. After processing, use the download
+button to save the compressed image.
+</p>
+
+<h3>How to resize an image</h3>
+
+<p>
+Open the Image Resizer, choose an image, enter the required
+width and height, then click Resize Image.
+</p>
+
+<h3>How to calculate age</h3>
+
+<p>
+Open the Age Calculator, select your date of birth and click
+Calculate Age to see your age in years, months and days.
+</p>
+
+<h3>How to convert units</h3>
+
+<p>
+Enter a number, choose the conversion type and click Convert
+to get the converted value.
 </p>
 
 </section>
@@ -569,7 +696,7 @@ centimeters.
 <h3>Is QuickTools free to use?</h3>
 
 <p>
-Yes. QuickTools provides these online tools free of charge.
+Yes. QuickTools provides free browser-based online tools.
 </p>
 
 </div>
@@ -580,7 +707,7 @@ Yes. QuickTools provides these online tools free of charge.
 <h3>Can I compress an image online?</h3>
 
 <p>
-Yes. Select your image in the Image Compressor and click
+Yes. Select an image in the Image Compressor and click
 Compress Image to create a smaller JPEG image.
 </p>
 
@@ -613,7 +740,19 @@ calculates the difference between that date and today's date.
 
 <div class="faq">
 
-<h3>Does QuickTools store uploaded images?</h3>
+<h3>What units can I convert?</h3>
+
+<p>
+You can currently convert kilometers and miles, kilograms
+and pounds, and centimeters and meters.
+</p>
+
+</div>
+
+
+<div class="faq">
+
+<h3>Are uploaded images stored?</h3>
 
 <p>
 The image tools process images directly in your browser.
@@ -634,8 +773,8 @@ QuickTools does not intentionally store your uploaded images.
 
 <p>
 QuickTools provides simple, fast and free online tools
-for everyday tasks. Our goal is to make useful browser-based
-tools easy to access without requiring complicated software.
+for everyday tasks. We aim to keep our tools easy to use,
+fast and accessible from phones, tablets and computers.
 </p>
 
 </section>
@@ -662,14 +801,14 @@ please contact us.
 <h2>Privacy Policy</h2>
 
 <p>
-QuickTools respects your privacy. Images and other data
-processed by our tools are handled directly in your browser.
-We do not intentionally store your uploaded images.
+QuickTools respects your privacy. Images processed by our
+image tools are handled directly in your browser.
 </p>
 
 <p>
-By using QuickTools, you understand that the tools are
-provided for general informational and personal use.
+We do not intentionally store your uploaded images on our
+website. Users should avoid uploading confidential or
+sensitive images to online tools.
 </p>
 
 </section>
@@ -683,8 +822,12 @@ provided for general informational and personal use.
 
 <p>
 QuickTools is provided for personal and general use.
-Please use our tools responsibly and verify important
-results before relying on them.
+The tools are offered on an as-is basis.
+</p>
+
+<p>
+Please verify important calculations and results before
+using them for important decisions.
 </p>
 
 </section>
@@ -716,6 +859,8 @@ results before relying on them.
 
 <script>
 
+
+/* IMAGE COMPRESSOR */
 
 function compressImage(){
 
@@ -774,11 +919,19 @@ ctx.drawImage(img,0,0,width,height);
 
 canvas.toBlob(function(blob){
 
+if(!blob){
+
+result.innerText="Unable to compress this image.";
+
+return;
+
+}
+
+
 const url=URL.createObjectURL(blob);
 
 
 result.innerHTML=
-
 '<a class="download" href="'+url+'" download="quicktools-compressed.jpg">Download Compressed Image</a>';
 
 
@@ -797,6 +950,8 @@ reader.readAsDataURL(input.files[0]);
 }
 
 
+
+/* IMAGE RESIZER */
 
 function resizeImage(){
 
@@ -856,11 +1011,19 @@ ctx.drawImage(img,0,0,width,height);
 
 canvas.toBlob(function(blob){
 
+if(!blob){
+
+result.innerText="Unable to resize this image.";
+
+return;
+
+}
+
+
 const url=URL.createObjectURL(blob);
 
 
 result.innerHTML=
-
 '<a class="download" href="'+url+'" download="quicktools-resized.jpg">Download Resized Image</a>';
 
 
@@ -880,24 +1043,36 @@ reader.readAsDataURL(input.files[0]);
 
 
 
+/* AGE CALCULATOR */
+
 function calculateAge(){
 
 const dobValue=document.getElementById("dob").value;
 
+const result=document.getElementById("result");
+
 
 if(!dobValue){
 
-document.getElementById("result").innerText=
-"Please select your date of birth.";
+result.innerText="Please select your date of birth.";
 
 return;
 
 }
 
 
-const dob=new Date(dobValue);
+const dob=new Date(dobValue+"T00:00:00");
 
 const today=new Date();
+
+
+if(dob>today){
+
+result.innerText="Date of birth cannot be in the future.";
+
+return;
+
+}
 
 
 let years=
@@ -932,7 +1107,7 @@ months+=12;
 }
 
 
-document.getElementById("result").innerText=
+result.innerText=
 "You are "+
 years+
 " years, "+
@@ -945,6 +1120,8 @@ days+
 
 
 
+/* UNIT CONVERTER */
+
 function convertUnit(){
 
 const value=
@@ -952,10 +1129,8 @@ parseFloat(
 document.getElementById("unitValue").value
 );
 
-
 const type=
 document.getElementById("unitType").value;
-
 
 const result=
 document.getElementById("unitResult");

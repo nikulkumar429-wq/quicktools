@@ -7,7 +7,7 @@
 
 <style>
 body{
-  font-family:Arial;
+  font-family:Arial,sans-serif;
   margin:0;
   background:#f5f7fb;
   text-align:center;
@@ -16,7 +16,7 @@ body{
 header{
   background:#111827;
   color:white;
-  padding:35px;
+  padding:35px 15px;
 }
 
 h1{
@@ -39,6 +39,7 @@ h1{
   width:220px;
   border-radius:15px;
   box-shadow:0 3px 12px #ccc;
+  box-sizing:border-box;
 }
 
 button{
@@ -50,21 +51,44 @@ button{
   cursor:pointer;
 }
 
+input{
+  padding:10px;
+  max-width:90%;
+}
+
 #age{
   background:white;
   margin:10px auto 40px;
   padding:25px;
   max-width:450px;
   border-radius:15px;
+  box-sizing:border-box;
+  box-shadow:0 3px 12px #ccc;
 }
 
-input{
-  padding:10px;
+#compress{
+  background:white;
+  margin:10px auto 40px;
+  padding:25px;
+  max-width:450px;
+  border-radius:15px;
+  box-sizing:border-box;
+  box-shadow:0 3px 12px #ccc;
 }
 
-#result{
+#result,#compressResult{
   font-weight:bold;
   margin-top:20px;
+}
+
+.download{
+  display:inline-block;
+  margin-top:15px;
+  padding:10px 18px;
+  background:#111827;
+  color:white;
+  text-decoration:none;
+  border-radius:7px;
 }
 </style>
 </head>
@@ -79,14 +103,11 @@ input{
 <div class="tools">
 
 <div class="box">
-  <h2>🖼️ Image Compressor</h2>
-  input type="file" id="compressInput"
-accept="image/*">
-  <br><br>
-  <button
-oneclik="compressImage()">Compress
-image</button>
-  <p id="compressResult"></p>
+<h2>🖼️ Image Compressor</h2>
+<p>Compress images easily.</p>
+<button onclick="document.getElementById('compress').scrollIntoView()">
+Open Tool
+</button>
 </div>
 
 <div class="box">
@@ -98,7 +119,9 @@ image</button>
 <div class="box">
 <h2>🧮 Age Calculator</h2>
 <p>Calculate your age instantly.</p>
-<button onclick="document.getElementById('age').scrollIntoView()">Open Tool</button>
+<button onclick="document.getElementById('age').scrollIntoView()">
+Open Tool
+</button>
 </div>
 
 <div class="box">
@@ -109,15 +132,96 @@ image</button>
 
 </div>
 
-<div id="age">
-<h2>Age Calculator</h2>
-<input type="date" id="dob">
+<div id="compress">
+
+<h2>🖼️ Image Compressor</h2>
+
+<input type="file" id="compressInput" accept="image/*">
+
 <br><br>
+
+<button onclick="compressImage()">Compress Image</button>
+
+<p id="compressResult"></p>
+
+</div>
+
+<div id="age">
+
+<h2>Age Calculator</h2>
+
+<input type="date" id="dob">
+
+<br><br>
+
 <button onclick="calculateAge()">Calculate Age</button>
+
 <p id="result"></p>
+
 </div>
 
 <script>
+
+function compressImage(){
+
+  const input = document.getElementById("compressInput");
+  const result = document.getElementById("compressResult");
+
+  if(!input.files || !input.files[0]){
+    result.innerText = "Please select an image first.";
+    return;
+  }
+
+  const file = input.files[0];
+  const reader = new FileReader();
+
+  reader.onload = function(e){
+
+    const img = new Image();
+
+    img.onload = function(){
+
+      const canvas = document.createElement("canvas");
+      const ctx = canvas.getContext("2d");
+
+      const maxWidth = 1200;
+
+      let width = img.width;
+      let height = img.height;
+
+      if(width > maxWidth){
+        height = height * (maxWidth / width);
+        width = maxWidth;
+      }
+
+      canvas.width = width;
+      canvas.height = height;
+
+      ctx.drawImage(img,0,0,width,height);
+
+      canvas.toBlob(function(blob){
+
+        const url = URL.createObjectURL(blob);
+
+        result.innerHTML =
+        '<a class="download" href="' +
+        url +
+        '" download="quicktools-compressed.jpg">' +
+        'Download Compressed Image' +
+        '</a>';
+
+      },"image/jpeg",0.7);
+
+    };
+
+    img.src = e.target.result;
+
+  };
+
+  reader.readAsDataURL(file);
+}
+
+
 function calculateAge(){
 
   const dobValue = document.getElementById("dob").value;
@@ -131,9 +235,14 @@ function calculateAge(){
   const dob = new Date(dobValue);
   const today = new Date();
 
-  let years = today.getFullYear() - dob.getFullYear();
-  let months = today.getMonth() - dob.getMonth();
-  let days = today.getDate() - dob.getDate();
+  let years =
+  today.getFullYear() - dob.getFullYear();
+
+  let months =
+  today.getMonth() - dob.getMonth();
+
+  let days =
+  today.getDate() - dob.getDate();
 
   if(days < 0){
     months--;
@@ -150,99 +259,17 @@ function calculateAge(){
   }
 
   document.getElementById("result").innerText =
-  `You are ${years} years, ${months} months and ${days} days old.`;
+  "You are " +
+  years +
+  " years, " +
+  months +
+  " months and " +
+  days +
+  " days old.";
+
 }
+
 </script>
 
 </body>
 </html>
-<script>
-function compressImage() {
-  const input = document.getElementById("compressInput");
-
-  if (!input.files.length) {
-    alert("Please select an image first.");
-    return;
-  }
-
-  const file = input.files[0];
-  const reader = new FileReader();
-
-  reader.onload = function(e) {
-    const img = new Image();
-
-    img.onload = function() {
-      const canvas = document.createElement("canvas");
-      const ctx = canvas.getContext("2d");
-
-      const maxWidth = 1200;
-      const scale = Math.min(1, maxWidth / img.width);
-
-      canvas.width = img.width * scale;
-      canvas.height = img.height * scale;
-
-      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-
-      canvas.toBlob(function(blob) {
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement("a");
-
-        link.href = url;
-        link.download = "quicktools-compressed.jpg";
-        link.innerText = "Download Compressed Image";
-
-        document.getElementById("compressResult").innerHTML = "";
-        document.getElementById("compressResult").appendChild(link);
-      }, "image/jpeg", 0.7);
-    };
-
-    img.src = e.target.result;
-  };
-
-  reader.readAsDataURL(file);
-}
-</script>
-  const input = document.getElementById("compressInput");
-
-  if (!input.files.length) {
-    alert("Please select an image first.");
-    return;
-  }
-
-  const file = input.files[0];
-  const reader = new FileReader();
-
-  reader.onload = function(e) {
-    const img = new Image();
-
-    img.onload = function() {
-      const canvas = document.createElement("canvas");
-      const ctx = canvas.getContext("2d");
-
-      const maxWidth = 1200;
-      const scale = Math.min(1, maxWidth / img.width);
-
-      canvas.width = img.width * scale;
-      canvas.height = img.height * scale;
-
-      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-
-      canvas.toBlob(function(blob) {
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement("a");
-
-        link.href = url;
-        link.download = "quicktools-compressed.jpg";
-        link.innerText = "Download Compressed Image";
-
-        document.getElementById("compressResult").innerHTML = "";
-        document.getElementById("compressResult").appendChild(link);
-      }, "image/jpeg", 0.7);
-    };
-
-    img.src = e.target.result;
-  };
-
-  reader.readAsDataURL(file);
-}
-</script>

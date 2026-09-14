@@ -3,15 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>QuickTools - Free Online Tools</title
-                                       <meta name="google-site-verification" content="Y9iJ5ovFccLJ6lYFEpRNvwfYgxtbGjfPBuMOFvepRaY" />
-                                       <meta name="description" content="QuickTools offers free online tools including image compressor, image resizer, age calculator and unit converter.">
+
+<title>QuickTools - Free Online Tools</title>
+
+<meta name="google-site-verification" content="Y9iJ5ovFccLJ6lYFEpRNvwfYgxtbGjfPBuMOFvepRaY" />
+
+<meta name="description" content="QuickTools offers free online tools including image compressor, image resizer, age calculator and unit converter.">
+
 <meta name="keywords" content="image compressor, image resizer, age calculator, unit converter, free online tools">
-                                       
-                                       
 
 <style>
-*{box-sizing:border-box}
+
+*{
+box-sizing:border-box;
+}
 
 body{
 margin:0;
@@ -118,281 +123,577 @@ color:white;
 padding:25px 15px;
 margin-top:30px;
 }
+
+footer a{
+color:white;
+margin:10px;
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
+
 <h1>QuickTools</h1>
+
 <p>Simple & Free Online Tools</p>
+
 </header>
+
 
 <div class="tools">
 
+
 <div class="box">
+
 <h2>🖼️ Image Compressor</h2>
+
 <p>Compress images easily.</p>
-<button onclick="document.getElementById('compress').scrollIntoView()">Open Tool</button>
+
+<button onclick="document.getElementById('compress').scrollIntoView()">
+Open Tool
+</button>
+
 </div>
 
+
 <div class="box">
+
 <h2>📏 Image Resizer</h2>
+
 <p>Resize images to your required size.</p>
-<button onclick="document.getElementById('resize').scrollIntoView()">Open Tool</button>
+
+<button onclick="document.getElementById('resize').scrollIntoView()">
+Open Tool
+</button>
+
 </div>
 
+
 <div class="box">
+
 <h2>🧮 Age Calculator</h2>
+
 <p>Calculate your age instantly.</p>
-<button onclick="document.getElementById('age').scrollIntoView()">Open Tool</button>
+
+<button onclick="document.getElementById('age').scrollIntoView()">
+Open Tool
+</button>
+
 </div>
+
 
 <div class="box">
+
 <h2>🔄 Unit Converter</h2>
+
 <p>Convert different units easily.</p>
-<button onclick="document.getElementById('unit').scrollIntoView()">Open Tool</button>
-</div>
+
+<button onclick="document.getElementById('unit').scrollIntoView()">
+Open Tool
+</button>
 
 </div>
+
+
+</div>
+
+
+<!-- IMAGE COMPRESSOR -->
 
 <div id="compress" class="tool-section">
+
 <h2>🖼️ Image Compressor</h2>
+
 <input type="file" id="compressInput" accept="image/*">
+
 <br><br>
-<button onclick="compressImage()">Compress Image</button>
+
+<button onclick="compressImage()">
+Compress Image
+</button>
+
 <p id="compressResult" class="result"></p>
+
 </div>
+
+
+<!-- IMAGE RESIZER -->
 
 <div id="resize" class="tool-section">
+
 <h2>📏 Image Resizer</h2>
+
 <input type="file" id="resizeInput" accept="image/*">
+
 <br><br>
-<label>Width:</label><br>
+
+<label>Width:</label>
+
+<br>
+
 <input type="number" id="resizeWidth" placeholder="Width">
+
 <br><br>
-<label>Height:</label><br>
+
+<label>Height:</label>
+
+<br>
+
 <input type="number" id="resizeHeight" placeholder="Height">
+
 <br><br>
-<button onclick="resizeImage()">Resize Image</button>
+
+<button onclick="resizeImage()">
+Resize Image
+</button>
+
 <p id="resizeResult" class="result"></p>
+
 </div>
+
+
+<!-- AGE CALCULATOR -->
 
 <div id="age" class="tool-section">
+
 <h2>🧮 Age Calculator</h2>
+
 <input type="date" id="dob">
+
 <br><br>
-<button onclick="calculateAge()">Calculate Age</button>
+
+<button onclick="calculateAge()">
+Calculate Age
+</button>
+
 <p id="result" class="result"></p>
+
 </div>
 
+
+<!-- UNIT CONVERTER -->
+
 <div id="unit" class="tool-section">
+
 <h2>🔄 Unit Converter</h2>
+
 <input type="number" id="unitValue" placeholder="Enter value">
+
 <br><br>
 
 <select id="unitType">
-<option value="km-miles">Kilometers → Miles</option>
-<option value="miles-km">Miles → Kilometers</option>
-<option value="kg-lb">Kilograms → Pounds</option>
-<option value="lb-kg">Pounds → Kilograms</option>
-<option value="cm-m">Centimeters → Meters</option>
-<option value="m-cm">Meters → Centimeters</option>
+
+<option value="km-miles">
+Kilometers → Miles
+</option>
+
+<option value="miles-km">
+Miles → Kilometers
+</option>
+
+<option value="kg-lb">
+Kilograms → Pounds
+</option>
+
+<option value="lb-kg">
+Pounds → Kilograms
+</option>
+
+<option value="cm-m">
+Centimeters → Meters
+</option>
+
+<option value="m-cm">
+Meters → Centimeters
+</option>
+
 </select>
 
 <br><br>
-<button onclick="convertUnit()">Convert</button>
+
+<button onclick="convertUnit()">
+Convert
+</button>
+
 <p id="unitResult" class="result"></p>
+
 </div>
 
-<footer>
-<p>© 2026 QuickTools — Simple & Free Online Tools</p>
 
-<p>
-<a href="#about" style="color:white;margin:10px;">About</a>
-<a href="#contact" style="color:white;margin:10px;">Contact</a>
-<a href="#privacy" style="color:white;margin:10px;">Privacy Policy</a>
-<a href="#terms" style="color:white;margin:10px;">Terms</a>
-</p>
-</footer>
-  <div id="about" class="tool-section">
+<!-- ABOUT -->
+
+<div id="about" class="tool-section">
+
 <h2>About QuickTools</h2>
+
 <p>
 QuickTools provides simple, fast and free online tools
 for everyday tasks.
 </p>
-</div
-  <div id="contact" class="tool-section">
+
+</div>
+
+
+<!-- CONTACT -->
+
+<div id="contact" class="tool-section">
+
 <h2>Contact QuickTools</h2>
+
 <p>
 For questions, suggestions or feedback,
 please contact us.
 </p>
-</div
-  <div id="privacy" class="tool-section">
+
+</div>
+
+
+<!-- PRIVACY POLICY -->
+
+<div id="privacy" class="tool-section">
+
 <h2>Privacy Policy</h2>
+
 <p>
 QuickTools respects your privacy. Images and other data
 processed by our tools are handled directly in your browser.
 We do not intentionally store your uploaded images.
 </p>
-</div
-  <div id="terms" class="tool-section">
+
+</div>
+
+
+<!-- TERMS -->
+
+<div id="terms" class="tool-section">
+
 <h2>Terms of Use</h2>
+
 <p>
 QuickTools is provided for personal and general use.
 Please use our tools responsibly and verify important
 results before relying on them.
 </p>
+
 </div>
+
+
+<footer>
+
+<p>
+© 2026 QuickTools — Simple & Free Online Tools
+</p>
+
+<p>
+
+<a href="#about">About</a>
+
+<a href="#contact">Contact</a>
+
+<a href="#privacy">Privacy Policy</a>
+
+<a href="#terms">Terms</a>
+
+</p>
+
+</footer>
+
 
 <script>
 
+
 function compressImage(){
+
 const input=document.getElementById("compressInput");
+
 const result=document.getElementById("compressResult");
 
+
 if(!input.files || !input.files[0]){
+
 result.innerText="Please select an image first.";
+
 return;
+
 }
+
 
 const reader=new FileReader();
 
+
 reader.onload=function(e){
+
 const img=new Image();
 
+
 img.onload=function(){
+
 const canvas=document.createElement("canvas");
+
 const ctx=canvas.getContext("2d");
 
+
 const maxWidth=1200;
+
 let width=img.width;
+
 let height=img.height;
 
+
 if(width>maxWidth){
+
 height=height*(maxWidth/width);
+
 width=maxWidth;
+
 }
 
+
 canvas.width=width;
+
 canvas.height=height;
+
 
 ctx.drawImage(img,0,0,width,height);
 
+
 canvas.toBlob(function(blob){
+
 const url=URL.createObjectURL(blob);
 
-result.innerHTML='<a class="download" href="'+url+'" download="quicktools-compressed.jpg">Download Compressed Image</a>';
+
+result.innerHTML=
+
+'<a class="download" href="'+url+'" download="quicktools-compressed.jpg">Download Compressed Image</a>';
+
 
 },"image/jpeg",0.7);
+
 };
+
 
 img.src=e.target.result;
+
 };
 
+
 reader.readAsDataURL(input.files[0]);
+
 }
+
 
 
 function resizeImage(){
+
 const input=document.getElementById("resizeInput");
-const width=parseInt(document.getElementById("resizeWidth").value);
-const height=parseInt(document.getElementById("resizeHeight").value);
+
+const width=parseInt(
+document.getElementById("resizeWidth").value
+);
+
+const height=parseInt(
+document.getElementById("resizeHeight").value
+);
+
 const result=document.getElementById("resizeResult");
 
+
 if(!input.files || !input.files[0]){
+
 result.innerText="Please select an image first.";
+
 return;
+
 }
 
+
 if(!width || !height || width<=0 || height<=0){
+
 result.innerText="Please enter valid width and height.";
+
 return;
+
 }
+
 
 const reader=new FileReader();
 
+
 reader.onload=function(e){
+
 const img=new Image();
 
+
 img.onload=function(){
+
 const canvas=document.createElement("canvas");
+
 const ctx=canvas.getContext("2d");
 
+
 canvas.width=width;
+
 canvas.height=height;
+
 
 ctx.drawImage(img,0,0,width,height);
 
+
 canvas.toBlob(function(blob){
+
 const url=URL.createObjectURL(blob);
 
-result.innerHTML='<a class="download" href="'+url+'" download="quicktools-resized.jpg">Download Resized Image</a>';
+
+result.innerHTML=
+
+'<a class="download" href="'+url+'" download="quicktools-resized.jpg">Download Resized Image</a>';
+
 
 },"image/jpeg",0.9);
+
 };
+
 
 img.src=e.target.result;
+
 };
 
+
 reader.readAsDataURL(input.files[0]);
+
 }
+
 
 
 function calculateAge(){
+
 const dobValue=document.getElementById("dob").value;
 
+
 if(!dobValue){
-document.getElementById("result").innerText="Please select your date of birth.";
-return;
-}
-
-const dob=new Date(dobValue);
-const today=new Date();
-
-let years=today.getFullYear()-dob.getFullYear();
-let months=today.getMonth()-dob.getMonth();
-let days=today.getDate()-dob.getDate();
-
-if(days<0){
-months--;
-days+=new Date(today.getFullYear(),today.getMonth(),0).getDate();
-}
-
-if(months<0){
-years--;
-months+=12;
-}
 
 document.getElementById("result").innerText=
-"You are "+years+" years, "+months+" months and "+days+" days old.";
+"Please select your date of birth.";
+
+return;
+
 }
+
+
+const dob=new Date(dobValue);
+
+const today=new Date();
+
+
+let years=
+today.getFullYear()-dob.getFullYear();
+
+let months=
+today.getMonth()-dob.getMonth();
+
+let days=
+today.getDate()-dob.getDate();
+
+
+if(days<0){
+
+months--;
+
+days+=new Date(
+today.getFullYear(),
+today.getMonth(),
+0
+).getDate();
+
+}
+
+
+if(months<0){
+
+years--;
+
+months+=12;
+
+}
+
+
+document.getElementById("result").innerText=
+"You are "+
+years+
+" years, "+
+months+
+" months and "+
+days+
+" days old.";
+
+}
+
 
 
 function convertUnit(){
-const value=parseFloat(document.getElementById("unitValue").value);
-const type=document.getElementById("unitType").value;
-const result=document.getElementById("unitResult");
+
+const value=
+parseFloat(
+document.getElementById("unitValue").value
+);
+
+
+const type=
+document.getElementById("unitType").value;
+
+
+const result=
+document.getElementById("unitResult");
+
 
 if(isNaN(value)){
+
 result.innerText="Please enter a value.";
+
 return;
+
 }
+
 
 let answer;
 
-if(type==="km-miles") answer=value*0.621371;
-if(type==="miles-km") answer=value*1.60934;
-if(type==="kg-lb") answer=value*2.20462;
-if(type==="lb-kg") answer=value*0.453592;
-if(type==="cm-m") answer=value/100;
-if(type==="m-cm") answer=value*100;
 
-result.innerText="Result: "+answer.toFixed(2);
+if(type==="km-miles")
+answer=value*0.621371;
+
+
+if(type==="miles-km")
+answer=value*1.60934;
+
+
+if(type==="kg-lb")
+answer=value*2.20462;
+
+
+if(type==="lb-kg")
+answer=value*0.453592;
+
+
+if(type==="cm-m")
+answer=value/100;
+
+
+if(type==="m-cm")
+answer=value*100;
+
+
+result.innerText=
+"Result: "+
+answer.toFixed(2);
+
 }
 
 </script>
 
+
 </body>
+
 </html>

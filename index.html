@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -8,9 +9,28 @@
 
 <meta name="google-site-verification" content="Y9iJ5ovFccLJ6lYFEpRNvwfYgxtbGjfPBuMOFvepRaY" />
 
-<meta name="description" content="QuickTools offers free online tools including image compressor, image resizer, age calculator and unit converter.">
+<meta name="description" content="QuickTools provides free online tools including image compressor, image resizer, age calculator and unit converter. Fast, simple and easy to use.">
 
-<meta name="keywords" content="image compressor, image resizer, age calculator, unit converter, free online tools">
+<meta name="keywords" content="free online tools, image compressor, image resizer, age calculator, unit converter, compress image online, resize image online">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://nikulkumar429-wq.github.io/quicktools/">
+
+<meta property="og:title" content="QuickTools - Free Online Tools">
+<meta property="og:description" content="Free image compressor, image resizer, age calculator and unit converter.">
+<meta property="og:url" content="https://nikulkumar429-wq.github.io/quicktools/">
+<meta property="og:type" content="website">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "QuickTools",
+  "url": "https://nikulkumar429-wq.github.io/quicktools/",
+  "description": "Free online tools including image compressor, image resizer, age calculator and unit converter."
+}
+</script>
 
 <style>
 
@@ -18,29 +38,55 @@
 box-sizing:border-box;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
 margin:0;
 font-family:Arial,sans-serif;
 background:#f4f7fb;
 color:#1f2937;
-text-align:center;
+line-height:1.6;
 }
 
 header{
 background:linear-gradient(135deg,#111827,#2563eb);
 color:white;
-padding:45px 15px;
+padding:50px 15px;
+text-align:center;
 }
 
 header h1{
 margin:0;
-font-size:42px;
+font-size:44px;
 }
 
 header p{
 margin:10px 0 0;
-font-size:17px;
-opacity:.9;
+font-size:18px;
+opacity:.92;
+}
+
+nav{
+background:#ffffff;
+padding:14px 10px;
+box-shadow:0 2px 10px rgba(0,0,0,.08);
+position:sticky;
+top:0;
+z-index:10;
+}
+
+nav a{
+color:#2563eb;
+text-decoration:none;
+font-weight:bold;
+margin:0 10px;
+font-size:14px;
+}
+
+nav a:hover{
+text-decoration:underline;
 }
 
 .tools{
@@ -53,7 +99,7 @@ padding:35px 15px;
 
 .box{
 background:white;
-width:250px;
+width:260px;
 padding:25px;
 border-radius:18px;
 box-shadow:0 5px 20px rgba(0,0,0,.10);
@@ -62,10 +108,12 @@ box-shadow:0 5px 20px rgba(0,0,0,.10);
 .box h2{
 margin-top:0;
 font-size:21px;
+color:#111827;
 }
 
 .box p{
 color:#6b7280;
+min-height:65px;
 }
 
 button{
@@ -87,24 +135,32 @@ padding:10px;
 border:1px solid #d1d5db;
 border-radius:8px;
 max-width:100%;
+font-size:15px;
 }
 
 .tool-section{
 background:white;
-margin:20px auto 40px;
-padding:28px;
-max-width:500px;
+margin:25px auto 40px;
+padding:30px;
+max-width:650px;
 border-radius:18px;
 box-shadow:0 5px 20px rgba(0,0,0,.10);
 }
 
 .tool-section h2{
 color:#2563eb;
+margin-top:0;
+}
+
+.tool-description{
+color:#4b5563;
+margin-bottom:25px;
 }
 
 .result{
 font-weight:bold;
 margin-top:20px;
+color:#111827;
 }
 
 .download{
@@ -117,19 +173,87 @@ text-decoration:none;
 border-radius:9px;
 }
 
+.download:hover{
+background:#1d4ed8;
+}
+
+.info-section{
+background:white;
+max-width:900px;
+margin:30px auto;
+padding:30px;
+border-radius:18px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+text-align:left;
+}
+
+.info-section h2{
+color:#2563eb;
+text-align:center;
+}
+
+.info-section h3{
+color:#111827;
+}
+
+.faq{
+border-top:1px solid #e5e7eb;
+padding:18px 0;
+}
+
+.faq h3{
+margin:0 0 8px;
+font-size:18px;
+}
+
 footer{
 background:#111827;
 color:white;
-padding:25px 15px;
-margin-top:30px;
+padding:30px 15px;
+margin-top:40px;
+text-align:center;
 }
 
 footer a{
 color:white;
-margin:10px;
+margin:8px;
+text-decoration:none;
+}
+
+footer a:hover{
+text-decoration:underline;
+}
+
+@media(max-width:600px){
+
+header h1{
+font-size:36px;
+}
+
+nav a{
+display:inline-block;
+margin:5px;
+}
+
+.tools{
+padding:25px 12px;
+}
+
+.box{
+width:100%;
+max-width:350px;
+}
+
+.tool-section{
+margin-left:12px;
+margin-right:12px;
+padding:25px 18px;
+}
+
 }
 
 </style>
+
 </head>
 
 <body>
@@ -138,19 +262,38 @@ margin:10px;
 
 <h1>QuickTools</h1>
 
-<p>Simple & Free Online Tools</p>
+<p>Simple, Fast & Free Online Tools</p>
 
 </header>
 
 
-<div class="tools">
+<nav>
+
+<a href="#compress">Image Compressor</a>
+
+<a href="#resize">Image Resizer</a>
+
+<a href="#age">Age Calculator</a>
+
+<a href="#unit">Unit Converter</a>
+
+</nav>
+
+
+<main>
+
+
+<section class="tools">
 
 
 <div class="box">
 
-<h2>🖼️ Image Compressor</h2>
+<h2>🖼️ Free Image Compressor</h2>
 
-<p>Compress images online for free. Reduce image size while maintaining good quality.</p>
+<p>
+Compress images online for free and reduce image file size
+while maintaining good image quality.
+</p>
 
 <button onclick="document.getElementById('compress').scrollIntoView()">
 Open Tool
@@ -161,9 +304,12 @@ Open Tool
 
 <div class="box">
 
-<h2>📏 Image Resizer</h2>
+<h2>📏 Free Image Resizer</h2>
 
-<p>Resize images to your required size.</p>
+<p>
+Resize images online by entering your required width
+and height.
+</p>
 
 <button onclick="document.getElementById('resize').scrollIntoView()">
 Open Tool
@@ -174,9 +320,12 @@ Open Tool
 
 <div class="box">
 
-<h2>🧮 Age Calculator</h2>
+<h2>🧮 Free Age Calculator</h2>
 
-<p>Calculate your age instantly.</p>
+<p>
+Calculate your exact age in years, months and days
+using your date of birth.
+</p>
 
 <button onclick="document.getElementById('age').scrollIntoView()">
 Open Tool
@@ -187,9 +336,12 @@ Open Tool
 
 <div class="box">
 
-<h2>🔄 Unit Converter</h2>
+<h2>🔄 Free Unit Converter</h2>
 
-<p>Convert different units easily.</p>
+<p>
+Convert kilometers, miles, kilograms, pounds,
+centimeters and meters quickly.
+</p>
 
 <button onclick="document.getElementById('unit').scrollIntoView()">
 Open Tool
@@ -198,14 +350,20 @@ Open Tool
 </div>
 
 
-</div>
+</section>
 
 
 <!-- IMAGE COMPRESSOR -->
 
-<div id="compress" class="tool-section">
+<section id="compress" class="tool-section">
 
-<h2>🖼️ Image Compressor</h2>
+<h2>🖼️ Free Image Compressor Online</h2>
+
+<p class="tool-description">
+Use our free image compressor to reduce the file size of
+your images directly in your browser. Your image is processed
+on your device and is not intentionally stored by QuickTools.
+</p>
 
 <input type="file" id="compressInput" accept="image/*">
 
@@ -217,14 +375,19 @@ Compress Image
 
 <p id="compressResult" class="result"></p>
 
-</div>
+</section>
 
 
 <!-- IMAGE RESIZER -->
 
-<div id="resize" class="tool-section">
+<section id="resize" class="tool-section">
 
-<h2>📏 Image Resizer</h2>
+<h2>📏 Free Image Resizer Online</h2>
+
+<p class="tool-description">
+Resize your image to any required width and height.
+This simple image resizer works directly in your browser.
+</p>
 
 <input type="file" id="resizeInput" accept="image/*">
 
@@ -234,7 +397,11 @@ Compress Image
 
 <br>
 
-<input type="number" id="resizeWidth" placeholder="Width">
+<input
+type="number"
+id="resizeWidth"
+placeholder="Enter width"
+>
 
 <br><br>
 
@@ -242,7 +409,11 @@ Compress Image
 
 <br>
 
-<input type="number" id="resizeHeight" placeholder="Height">
+<input
+type="number"
+id="resizeHeight"
+placeholder="Enter height"
+>
 
 <br><br>
 
@@ -252,14 +423,19 @@ Resize Image
 
 <p id="resizeResult" class="result"></p>
 
-</div>
+</section>
 
 
 <!-- AGE CALCULATOR -->
 
-<div id="age" class="tool-section">
+<section id="age" class="tool-section">
 
-<h2>🧮 Age Calculator</h2>
+<h2>🧮 Free Age Calculator</h2>
+
+<p class="tool-description">
+Enter your date of birth to calculate your age in
+years, months and days.
+</p>
 
 <input type="date" id="dob">
 
@@ -271,16 +447,25 @@ Calculate Age
 
 <p id="result" class="result"></p>
 
-</div>
+</section>
 
 
 <!-- UNIT CONVERTER -->
 
-<div id="unit" class="tool-section">
+<section id="unit" class="tool-section">
 
-<h2>🔄 Unit Converter</h2>
+<h2>🔄 Free Unit Converter</h2>
 
-<input type="number" id="unitValue" placeholder="Enter value">
+<p class="tool-description">
+Convert common units quickly and easily using our free
+online unit converter.
+</p>
+
+<input
+type="number"
+id="unitValue"
+placeholder="Enter value"
+>
 
 <br><br>
 
@@ -320,40 +505,159 @@ Convert
 
 <p id="unitResult" class="result"></p>
 
+</section>
+
+
+<!-- SEO INFORMATION -->
+
+<section class="info-section">
+
+<h2>Free Online Tools at QuickTools</h2>
+
+<p>
+QuickTools is a simple collection of free online tools
+designed to help with everyday tasks. You can compress images,
+resize images, calculate age and convert common units without
+installing additional software.
+</p>
+
+<h3>Image Compressor</h3>
+
+<p>
+Our free image compressor helps reduce image file size.
+Smaller images can be easier to share and upload. Select an
+image and use the compression tool directly in your browser.
+</p>
+
+<h3>Image Resizer</h3>
+
+<p>
+The QuickTools image resizer lets you enter a custom width
+and height and resize an image quickly. It can be useful when
+you need an image at a specific size.
+</p>
+
+<h3>Age Calculator</h3>
+
+<p>
+Use the QuickTools age calculator to calculate your age based
+on your date of birth. The result shows your age in years,
+months and days.
+</p>
+
+<h3>Unit Converter</h3>
+
+<p>
+The unit converter supports common conversions such as
+kilometers to miles, miles to kilometers, kilograms to pounds,
+pounds to kilograms, centimeters to meters and meters to
+centimeters.
+</p>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section class="info-section">
+
+<h2>Frequently Asked Questions</h2>
+
+
+<div class="faq">
+
+<h3>Is QuickTools free to use?</h3>
+
+<p>
+Yes. QuickTools provides these online tools free of charge.
+</p>
+
 </div>
+
+
+<div class="faq">
+
+<h3>Can I compress an image online?</h3>
+
+<p>
+Yes. Select your image in the Image Compressor and click
+Compress Image to create a smaller JPEG image.
+</p>
+
+</div>
+
+
+<div class="faq">
+
+<h3>Can I resize an image online?</h3>
+
+<p>
+Yes. Select an image, enter the required width and height,
+and click Resize Image.
+</p>
+
+</div>
+
+
+<div class="faq">
+
+<h3>How does the Age Calculator work?</h3>
+
+<p>
+The Age Calculator uses the date of birth you enter and
+calculates the difference between that date and today's date.
+</p>
+
+</div>
+
+
+<div class="faq">
+
+<h3>Does QuickTools store uploaded images?</h3>
+
+<p>
+The image tools process images directly in your browser.
+QuickTools does not intentionally store your uploaded images.
+</p>
+
+</div>
+
+
+</section>
 
 
 <!-- ABOUT -->
 
-<div id="about" class="tool-section">
+<section id="about" class="info-section">
 
 <h2>About QuickTools</h2>
 
 <p>
 QuickTools provides simple, fast and free online tools
-for everyday tasks.
+for everyday tasks. Our goal is to make useful browser-based
+tools easy to access without requiring complicated software.
 </p>
 
-</div>
+</section>
 
 
 <!-- CONTACT -->
 
-<div id="contact" class="tool-section">
+<section id="contact" class="info-section">
 
 <h2>Contact QuickTools</h2>
 
 <p>
-For questions, suggestions or feedback,
+For questions, suggestions or feedback about QuickTools,
 please contact us.
 </p>
 
-</div>
+</section>
 
 
-<!-- PRIVACY POLICY -->
+<!-- PRIVACY -->
 
-<div id="privacy" class="tool-section">
+<section id="privacy" class="info-section">
 
 <h2>Privacy Policy</h2>
 
@@ -363,12 +667,17 @@ processed by our tools are handled directly in your browser.
 We do not intentionally store your uploaded images.
 </p>
 
-</div>
+<p>
+By using QuickTools, you understand that the tools are
+provided for general informational and personal use.
+</p>
+
+</section>
 
 
 <!-- TERMS -->
 
-<div id="terms" class="tool-section">
+<section id="terms" class="info-section">
 
 <h2>Terms of Use</h2>
 
@@ -378,7 +687,10 @@ Please use our tools responsibly and verify important
 results before relying on them.
 </p>
 
-</div>
+</section>
+
+
+</main>
 
 
 <footer>
@@ -695,5 +1007,4 @@ answer.toFixed(2);
 
 
 </body>
-
 </html>

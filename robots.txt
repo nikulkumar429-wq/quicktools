@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nikulkumar429-wq.github.io/quicktools/sitemap.xml

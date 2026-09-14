@@ -5,22 +5,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>QuickTools - Free Online Tools | Image Compressor, Resizer, Age Calculator</title>
+<title>QuickTools - Free Online Tools | Image Compressor, Resizer, Age Calculator & More</title>
 
 <meta name="google-site-verification" content="Y9iJ5ovFccLJ6lYFEpRNvwfYgxtbGjfPBuMOFvepRaY">
 
-<meta name="description" content="QuickTools provides free online tools including image compressor, image resizer, age calculator and unit converter. Fast, simple and easy to use.">
+<meta name="description" content="QuickTools provides free online tools including image compressor, image resizer, age calculator, unit converter, word counter, GST calculator, EMI calculator, BMI calculator, QR code generator and password generator.">
 
-<meta name="keywords" content="free online tools, image compressor, image resizer, age calculator, unit converter, compress image online, resize image online">
+<meta name="keywords" content="free online tools, image compressor, image resizer, age calculator, unit converter, word counter, character counter, percentage calculator, GST calculator, EMI calculator, BMI calculator, QR code generator, password generator">
 
 <meta name="robots" content="index, follow">
 
 <link rel="canonical" href="https://nikulkumar429-wq.github.io/quicktools/">
 
 <meta property="og:title" content="QuickTools - Free Online Tools">
-<meta property="og:description" content="Free image compressor, image resizer, age calculator and unit converter.">
+<meta property="og:description" content="Free online tools for images, calculations, text, QR codes and more.">
 <meta property="og:url" content="https://nikulkumar429-wq.github.io/quicktools/">
 <meta property="og:type" content="website">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 <script type="application/ld+json">
 {
@@ -28,48 +30,7 @@
   "@type":"WebSite",
   "name":"QuickTools",
   "url":"https://nikulkumar429-wq.github.io/quicktools/",
-  "description":"Free online tools including image compressor, image resizer, age calculator and unit converter."
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"FAQPage",
-  "mainEntity":[
-    {
-      "@type":"Question",
-      "name":"Is QuickTools free to use?",
-      "acceptedAnswer":{
-        "@type":"Answer",
-        "text":"Yes. QuickTools provides free browser-based online tools."
-      }
-    },
-    {
-      "@type":"Question",
-      "name":"Can I compress an image online?",
-      "acceptedAnswer":{
-        "@type":"Answer",
-        "text":"Yes. Select an image in the Image Compressor and click Compress Image."
-      }
-    },
-    {
-      "@type":"Question",
-      "name":"Can I resize an image online?",
-      "acceptedAnswer":{
-        "@type":"Answer",
-        "text":"Yes. Select an image, enter the required width and height, and click Resize Image."
-      }
-    },
-    {
-      "@type":"Question",
-      "name":"How does the Age Calculator work?",
-      "acceptedAnswer":{
-        "@type":"Answer",
-        "text":"The Age Calculator calculates the difference between the entered date of birth and today's date."
-      }
-    }
-  ]
+  "description":"Free online tools for everyday tasks."
 }
 </script>
 
@@ -123,7 +84,7 @@ nav a{
 color:#2563eb;
 text-decoration:none;
 font-weight:bold;
-margin:5px 9px;
+margin:5px 8px;
 font-size:14px;
 display:inline-block;
 }
@@ -136,14 +97,14 @@ text-decoration:underline;
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
-gap:22px;
+gap:20px;
 padding:40px 15px;
 }
 
 .box{
 background:white;
 width:270px;
-padding:27px;
+padding:25px;
 border-radius:18px;
 box-shadow:0 5px 20px rgba(0,0,0,.10);
 transition:transform .2s;
@@ -155,13 +116,13 @@ transform:translateY(-3px);
 
 .box h2{
 margin-top:0;
-font-size:21px;
+font-size:20px;
 color:#111827;
 }
 
 .box p{
 color:#6b7280;
-min-height:72px;
+min-height:65px;
 }
 
 button{
@@ -179,7 +140,7 @@ button:hover{
 background:#1d4ed8;
 }
 
-input,select{
+input,select,textarea{
 padding:11px;
 border:1px solid #d1d5db;
 border-radius:8px;
@@ -187,11 +148,17 @@ max-width:100%;
 font-size:15px;
 }
 
+textarea{
+width:100%;
+min-height:180px;
+resize:vertical;
+}
+
 .tool-section{
 background:white;
 margin:25px auto 40px;
 padding:32px;
-max-width:680px;
+max-width:700px;
 border-radius:18px;
 box-shadow:0 5px 20px rgba(0,0,0,.10);
 text-align:center;
@@ -259,22 +226,16 @@ margin:0 0 8px;
 font-size:18px;
 }
 
-footer{
-background:#111827;
-color:white;
-padding:32px 15px;
-margin-top:40px;
-text-align:center;
+.qr-box{
+display:flex;
+justify-content:center;
+margin-top:20px;
 }
 
-footer a{
-color:white;
-margin:8px;
-text-decoration:none;
-}
-
-footer a:hover{
-text-decoration:underline;
+#qrCode{
+padding:15px;
+background:white;
+display:inline-block;
 }
 
 @media(max-width:600px){
@@ -329,88 +290,98 @@ padding:25px 18px;
 
 </header>
 
-
 <nav>
 
-<a href="#compress">Image Compressor</a>
-<a href="#resize">Image Resizer</a>
-<a href="#age">Age Calculator</a>
-<a href="#unit">Unit Converter</a>
+<a href="#compress">Compressor</a>
+<a href="#resize">Resizer</a>
+<a href="#age">Age</a>
+<a href="#unit">Units</a>
+<a href="#word">Word Counter</a>
+<a href="#percentage">Percentage</a>
+<a href="#gst">GST</a>
+<a href="#emi">EMI</a>
+<a href="#bmi">BMI</a>
+<a href="#qr">QR Code</a>
+<a href="#password">Password</a>
+<a href="#crop">Crop Image</a>
 
 </nav>
 
-
 <main>
-
-
-<!-- TOOL CARDS -->
 
 <section class="tools">
 
-
 <div class="box">
-
 <h2>🖼️ Image Compressor</h2>
-
-<p>
-Compress images online for free and reduce image file size
-while maintaining good image quality.
-</p>
-
-<button onclick="document.getElementById('compress').scrollIntoView()">
-Open Tool
-</button>
-
+<p>Compress images online and reduce image file size.</p>
+<button onclick="goTo('compress')">Open Tool</button>
 </div>
 
-
 <div class="box">
-
 <h2>📏 Image Resizer</h2>
-
-<p>
-Resize images online by entering your required width
-and height.
-</p>
-
-<button onclick="document.getElementById('resize').scrollIntoView()">
-Open Tool
-</button>
-
+<p>Resize images using your required width and height.</p>
+<button onclick="goTo('resize')">Open Tool</button>
 </div>
 
-
 <div class="box">
-
 <h2>🧮 Age Calculator</h2>
-
-<p>
-Calculate your age in years, months and days using
-your date of birth.
-</p>
-
-<button onclick="document.getElementById('age').scrollIntoView()">
-Open Tool
-</button>
-
+<p>Calculate age in years, months and days.</p>
+<button onclick="goTo('age')">Open Tool</button>
 </div>
-
 
 <div class="box">
-
 <h2>🔄 Unit Converter</h2>
-
-<p>
-Convert common units including distance, weight and length
-quickly and easily.
-</p>
-
-<button onclick="document.getElementById('unit').scrollIntoView()">
-Open Tool
-</button>
-
+<p>Convert kilometers, miles, kilograms, pounds and more.</p>
+<button onclick="goTo('unit')">Open Tool</button>
 </div>
 
+<div class="box">
+<h2>📝 Word Counter</h2>
+<p>Count words, characters and spaces in your text.</p>
+<button onclick="goTo('word')">Open Tool</button>
+</div>
+
+<div class="box">
+<h2>🔢 Percentage Calculator</h2>
+<p>Calculate percentages quickly and easily.</p>
+<button onclick="goTo('percentage')">Open Tool</button>
+</div>
+
+<div class="box">
+<h2>💰 GST Calculator</h2>
+<p>Calculate GST amount and total price.</p>
+<button onclick="goTo('gst')">Open Tool</button>
+</div>
+
+<div class="box">
+<h2>🏦 EMI Calculator</h2>
+<p>Calculate monthly EMI for your loan.</p>
+<button onclick="goTo('emi')">Open Tool</button>
+</div>
+
+<div class="box">
+<h2>📊 BMI Calculator</h2>
+<p>Calculate your Body Mass Index.</p>
+<button onclick="goTo('bmi')">Open Tool</button>
+</div>
+
+<div class="box">
+<h2>🔗 QR Code Generator</h2>
+<p>Create a QR code from text or a website URL.</p>
+<button onclick="goTo('qr')">Open Tool</button>
+</div>
+
+<div class="box">
+<h2>🔐 Password Generator</h2>
+<p>Generate a random secure password.</p>
+<button onclick="goTo('password')">Open Tool</button>
+</div>
+
+<div class="box">
+<h2>🖼️ Image Cropper</h2>
+<p>Crop an image to a custom size.</p>
+<button onclick="goTo('crop')">Open Tool</button>
+</div>
 
 </section>
 
@@ -422,22 +393,14 @@ Open Tool
 <h2>🖼️ Free Image Compressor Online</h2>
 
 <p class="tool-description">
-Reduce the file size of your image with our free online
-image compressor. Select an image and compress it directly
-in your browser.
+Reduce image file size directly in your browser.
 </p>
 
-<input
-type="file"
-id="compressInput"
-accept="image/*"
->
+<input type="file" id="compressInput" accept="image/*">
 
 <br><br>
 
-<button onclick="compressImage()">
-Compress Image
-</button>
+<button onclick="compressImage()">Compress Image</button>
 
 <p id="compressResult" class="result"></p>
 
@@ -452,233 +415,360 @@ Compress Image
 
 <p class="tool-description">
 Resize your image to a custom width and height.
-Choose an image, enter the dimensions and create your resized image.
 </p>
 
-<input
-type="file"
-id="resizeInput"
-accept="image/*"
->
+<input type="file" id="resizeInput" accept="image/*">
 
 <br><br>
 
-<label for="resizeWidth">Width:</label>
-
+<label>Width:</label>
 <br>
 
-<input
-type="number"
-id="resizeWidth"
-placeholder="Enter width"
-min="1"
->
+<input type="number" id="resizeWidth" placeholder="Enter width" min="1">
 
 <br><br>
 
-<label for="resizeHeight">Height:</label>
-
+<label>Height:</label>
 <br>
 
-<input
-type="number"
-id="resizeHeight"
-placeholder="Enter height"
-min="1"
->
+<input type="number" id="resizeHeight" placeholder="Enter height" min="1">
 
 <br><br>
 
-<button onclick="resizeImage()">
-Resize Image
-</button>
+<button onclick="resizeImage()">Resize Image</button>
 
 <p id="resizeResult" class="result"></p>
 
 </section>
 
 
-<!-- AGE CALCULATOR -->
+<!-- AGE -->
 
 <section id="age" class="tool-section">
 
 <h2>🧮 Free Age Calculator</h2>
 
 <p class="tool-description">
-Enter your date of birth to calculate your current age
-in years, months and days.
+Calculate your age in years, months and days.
 </p>
 
-<input
-type="date"
-id="dob"
->
+<input type="date" id="dob">
 
 <br><br>
 
-<button onclick="calculateAge()">
-Calculate Age
-</button>
+<button onclick="calculateAge()">Calculate Age</button>
 
 <p id="result" class="result"></p>
 
 </section>
 
 
-<!-- UNIT CONVERTER -->
+<!-- UNIT -->
 
 <section id="unit" class="tool-section">
 
 <h2>🔄 Free Unit Converter</h2>
 
 <p class="tool-description">
-Convert common units quickly using our free online
-unit converter.
+Convert common units quickly.
 </p>
 
-<input
-type="number"
-id="unitValue"
-placeholder="Enter value"
->
+<input type="number" id="unitValue" placeholder="Enter value">
 
 <br><br>
 
 <select id="unitType">
 
-<option value="km-miles">
-Kilometers → Miles
-</option>
-
-<option value="miles-km">
-Miles → Kilometers
-</option>
-
-<option value="kg-lb">
-Kilograms → Pounds
-</option>
-
-<option value="lb-kg">
-Pounds → Kilograms
-</option>
-
-<option value="cm-m">
-Centimeters → Meters
-</option>
-
-<option value="m-cm">
-Meters → Centimeters
-</option>
+<option value="km-miles">Kilometers → Miles</option>
+<option value="miles-km">Miles → Kilometers</option>
+<option value="kg-lb">Kilograms → Pounds</option>
+<option value="lb-kg">Pounds → Kilograms</option>
+<option value="cm-m">Centimeters → Meters</option>
+<option value="m-cm">Meters → Centimeters</option>
 
 </select>
 
 <br><br>
 
-<button onclick="convertUnit()">
-Convert
-</button>
+<button onclick="convertUnit()">Convert</button>
 
 <p id="unitResult" class="result"></p>
 
 </section>
 
 
-<!-- ABOUT / SEO CONTENT -->
+<!-- WORD COUNTER -->
+
+<section id="word" class="tool-section">
+
+<h2>📝 Word & Character Counter</h2>
+
+<p class="tool-description">
+Count words, characters and spaces in your text.
+</p>
+
+<textarea id="wordText" placeholder="Type or paste your text here..." oninput="countWords()"></textarea>
+
+<p id="wordResult" class="result">
+Words: 0 | Characters: 0 | Characters without spaces: 0
+</p>
+
+</section>
+
+
+<!-- PERCENTAGE -->
+
+<section id="percentage" class="tool-section">
+
+<h2>🔢 Percentage Calculator</h2>
+
+<p class="tool-description">
+Find what percentage one number is of another.
+</p>
+
+<input type="number" id="percentValue" placeholder="Enter value">
+
+<br><br>
+
+<input type="number" id="percentTotal" placeholder="Enter total">
+
+<br><br>
+
+<button onclick="calculatePercentage()">Calculate Percentage</button>
+
+<p id="percentResult" class="result"></p>
+
+</section>
+
+
+<!-- GST -->
+
+<section id="gst" class="tool-section">
+
+<h2>💰 GST Calculator</h2>
+
+<p class="tool-description">
+Calculate GST amount and final price.
+</p>
+
+<input type="number" id="gstPrice" placeholder="Enter price">
+
+<br><br>
+
+<select id="gstRate">
+
+<option value="5">GST 5%</option>
+<option value="12">GST 12%</option>
+<option value="18">GST 18%</option>
+<option value="28">GST 28%</option>
+
+</select>
+
+<br><br>
+
+<button onclick="calculateGST()">Calculate GST</button>
+
+<p id="gstResult" class="result"></p>
+
+</section>
+
+
+<!-- EMI -->
+
+<section id="emi" class="tool-section">
+
+<h2>🏦 EMI Calculator</h2>
+
+<p class="tool-description">
+Calculate your monthly loan EMI.
+</p>
+
+<input type="number" id="loanAmount" placeholder="Loan amount">
+
+<br><br>
+
+<input type="number" id="interestRate" placeholder="Annual interest rate %">
+
+<br><br>
+
+<input type="number" id="loanYears" placeholder="Loan period in years">
+
+<br><br>
+
+<button onclick="calculateEMI()">Calculate EMI</button>
+
+<p id="emiResult" class="result"></p>
+
+</section>
+
+
+<!-- BMI -->
+
+<section id="bmi" class="tool-section">
+
+<h2>📊 BMI Calculator</h2>
+
+<p class="tool-description">
+Calculate your Body Mass Index using height and weight.
+</p>
+
+<input type="number" id="bmiWeight" placeholder="Weight in kg">
+
+<br><br>
+
+<input type="number" id="bmiHeight" placeholder="Height in cm">
+
+<br><br>
+
+<button onclick="calculateBMI()">Calculate BMI</button>
+
+<p id="bmiResult" class="result"></p>
+
+</section>
+
+
+<!-- QR -->
+
+<section id="qr" class="tool-section">
+
+<h2>🔗 QR Code Generator</h2>
+
+<p class="tool-description">
+Create a QR code from text or a website URL.
+</p>
+
+<input
+type="text"
+id="qrText"
+placeholder="Enter text or URL"
+style="width:100%;"
+>
+
+<br><br>
+
+<button onclick="generateQR()">Generate QR Code</button>
+
+<div class="qr-box">
+<div id="qrCode"></div>
+</div>
+
+<p id="qrResult" class="result"></p>
+
+</section>
+
+
+<!-- PASSWORD -->
+
+<section id="password" class="tool-section">
+
+<h2>🔐 Password Generator</h2>
+
+<p class="tool-description">
+Generate a random password for your account.
+</p>
+
+<input
+type="number"
+id="passwordLength"
+value="12"
+min="4"
+max="50"
+>
+
+<br><br>
+
+<button onclick="generatePassword()">Generate Password</button>
+
+<p id="passwordResult" class="result"></p>
+
+<button onclick="copyPassword()">Copy Password</button>
+
+</section>
+
+
+<!-- IMAGE CROP -->
+
+<section id="crop" class="tool-section">
+
+<h2>🖼️ Image Cropper</h2>
+
+<p class="tool-description">
+Crop an image to a custom width and height.
+</p>
+
+<input type="file" id="cropInput" accept="image/*">
+
+<br><br>
+
+<input type="number" id="cropWidth" placeholder="Crop width" min="1">
+
+<br><br>
+
+<input type="number" id="cropHeight" placeholder="Crop height" min="1">
+
+<br><br>
+
+<button onclick="cropImage()">Crop Image</button>
+
+<p id="cropResult" class="result"></p>
+
+</section>
+
+
+<!-- SEO CONTENT -->
 
 <section class="info-section">
 
 <h2>Free Online Tools at QuickTools</h2>
 
 <p>
-QuickTools is a collection of simple and free online tools
-for everyday tasks. The website provides browser-based tools
-for compressing images, resizing images, calculating age and
-converting common units.
+QuickTools is a free collection of useful online tools for
+everyday tasks. You can compress images, resize images,
+calculate age, convert units, count words, calculate
+percentages, calculate GST and EMI, calculate BMI, create
+QR codes and generate passwords.
 </p>
 
+<h3>Image Compressor</h3>
+
 <p>
-Our goal is to make useful tools easy to access without
-requiring complicated software or installations.
+QuickTools Image Compressor helps reduce image file size
+directly in your browser. Smaller images can be easier to
+upload, share and use online.
 </p>
 
-
-<h3>Free Image Compressor</h3>
+<h3>Image Resizer</h3>
 
 <p>
-The QuickTools Image Compressor helps reduce the size of
-image files. Smaller image files can be easier to upload,
-share and use on websites.
+Resize images by entering your desired width and height.
+The tool creates a resized JPEG image that you can save.
 </p>
 
+<h3>Word Counter</h3>
+
 <p>
-Select an image and click the Compress Image button.
-The tool creates a compressed JPEG image that you can save
-to your device.
+The Word Counter helps you count words and characters in
+articles, assignments, social media posts and other text.
 </p>
 
-
-<h3>Free Image Resizer</h3>
+<h3>Calculators</h3>
 
 <p>
-The QuickTools Image Resizer allows you to change the width
-and height of an image. Enter your desired dimensions and
-the tool creates a resized image.
+QuickTools includes percentage, GST, EMI, BMI and age
+calculators for common everyday calculations.
 </p>
 
-
-<h3>Free Age Calculator</h3>
+<h3>QR Code Generator</h3>
 
 <p>
-The QuickTools Age Calculator calculates age from a date of
-birth. It provides the result in years, months and days.
+Create a QR code from a website URL, text or other information.
 </p>
 
-
-<h3>Free Unit Converter</h3>
-
-<p>
-The Unit Converter supports common conversions including
-kilometers to miles, miles to kilometers, kilograms to pounds,
-pounds to kilograms, centimeters to meters and meters to
-centimeters.
-</p>
-
-</section>
-
-
-<!-- HOW TO USE -->
-
-<section class="info-section">
-
-<h2>How to Use QuickTools</h2>
-
-<h3>How to compress an image</h3>
+<h3>Password Generator</h3>
 
 <p>
-Open the Image Compressor, choose an image from your device,
-then click Compress Image. After processing, use the download
-button to save the compressed image.
-</p>
-
-<h3>How to resize an image</h3>
-
-<p>
-Open the Image Resizer, choose an image, enter the required
-width and height, then click Resize Image.
-</p>
-
-<h3>How to calculate age</h3>
-
-<p>
-Open the Age Calculator, select your date of birth and click
-Calculate Age to see your age in years, months and days.
-</p>
-
-<h3>How to convert units</h3>
-
-<p>
-Enter a number, choose the conversion type and click Convert
-to get the converted value.
+Generate random passwords with different lengths for general
+account-security purposes.
 </p>
 
 </section>
@@ -690,77 +780,40 @@ to get the converted value.
 
 <h2>Frequently Asked Questions</h2>
 
-
 <div class="faq">
-
-<h3>Is QuickTools free to use?</h3>
-
-<p>
-Yes. QuickTools provides free browser-based online tools.
-</p>
-
+<h3>Is QuickTools free?</h3>
+<p>Yes. QuickTools provides free browser-based online tools.</p>
 </div>
 
-
 <div class="faq">
-
-<h3>Can I compress an image online?</h3>
-
-<p>
-Yes. Select an image in the Image Compressor and click
-Compress Image to create a smaller JPEG image.
-</p>
-
+<h3>Can I compress images online?</h3>
+<p>Yes. Select an image and use the Image Compressor.</p>
 </div>
 
-
 <div class="faq">
-
-<h3>Can I resize an image online?</h3>
-
-<p>
-Yes. Select an image, enter the required width and height,
-and click Resize Image.
-</p>
-
+<h3>Can I resize an image?</h3>
+<p>Yes. Enter your required width and height using the Image Resizer.</p>
 </div>
 
-
 <div class="faq">
-
-<h3>How does the Age Calculator work?</h3>
-
-<p>
-The Age Calculator uses the date of birth you enter and
-calculates the difference between that date and today's date.
-</p>
-
+<h3>Can I calculate my age?</h3>
+<p>Yes. Enter your date of birth in the Age Calculator.</p>
 </div>
 
-
 <div class="faq">
-
-<h3>What units can I convert?</h3>
-
-<p>
-You can currently convert kilometers and miles, kilograms
-and pounds, and centimeters and meters.
-</p>
-
+<h3>Can I calculate GST?</h3>
+<p>Yes. Enter the price and select the GST rate.</p>
 </div>
 
-
 <div class="faq">
-
-<h3>Are uploaded images stored?</h3>
-
-<p>
-The image tools process images directly in your browser.
-QuickTools does not intentionally store your uploaded images.
-</p>
-
+<h3>Can I calculate EMI?</h3>
+<p>Yes. Enter the loan amount, interest rate and loan period.</p>
 </div>
 
+<div class="faq">
+<h3>Can I create QR codes?</h3>
+<p>Yes. Enter text or a website URL and generate a QR code.</p>
+</div>
 
 </section>
 
@@ -772,9 +825,9 @@ QuickTools does not intentionally store your uploaded images.
 <h2>About QuickTools</h2>
 
 <p>
-QuickTools provides simple, fast and free online tools
-for everyday tasks. We aim to keep our tools easy to use,
-fast and accessible from phones, tablets and computers.
+QuickTools provides simple, fast and free online tools for
+everyday tasks. Our goal is to make useful tools easy to access
+from phones, tablets and computers.
 </p>
 
 </section>
@@ -801,14 +854,13 @@ please contact us.
 <h2>Privacy Policy</h2>
 
 <p>
-QuickTools respects your privacy. Images processed by our
-image tools are handled directly in your browser.
+QuickTools respects your privacy. Image tools process images
+directly in your browser and we do not intentionally store
+uploaded images on our website.
 </p>
 
 <p>
-We do not intentionally store your uploaded images on our
-website. Users should avoid uploading confidential or
-sensitive images to online tools.
+Users should avoid uploading confidential or sensitive images.
 </p>
 
 </section>
@@ -822,16 +874,15 @@ sensitive images to online tools.
 
 <p>
 QuickTools is provided for personal and general use.
-The tools are offered on an as-is basis.
+The tools are provided on an as-is basis.
 </p>
 
 <p>
-Please verify important calculations and results before
-using them for important decisions.
+Please verify important calculations before using them for
+important decisions.
 </p>
 
 </section>
-
 
 </main>
 
@@ -845,11 +896,8 @@ using them for important decisions.
 <p>
 
 <a href="#about">About</a>
-
 <a href="#contact">Contact</a>
-
-<a href="#privacy">Privacy Policy</a>
-
+<a href="#privacy">Privacy</a>
 <a href="#terms">Terms</a>
 
 </p>
@@ -859,96 +907,84 @@ using them for important decisions.
 
 <script>
 
+/* NAVIGATION */
+
+function goTo(id){
+
+document.getElementById(id).scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
 
 /* IMAGE COMPRESSOR */
 
 function compressImage(){
 
 const input=document.getElementById("compressInput");
-
 const result=document.getElementById("compressResult");
-
 
 if(!input.files || !input.files[0]){
 
 result.innerText="Please select an image first.";
-
 return;
 
 }
 
-
 const reader=new FileReader();
-
 
 reader.onload=function(e){
 
 const img=new Image();
 
-
 img.onload=function(){
 
 const canvas=document.createElement("canvas");
-
 const ctx=canvas.getContext("2d");
-
 
 const maxWidth=1200;
 
 let width=img.width;
-
 let height=img.height;
-
 
 if(width>maxWidth){
 
 height=height*(maxWidth/width);
-
 width=maxWidth;
 
 }
 
-
 canvas.width=width;
-
 canvas.height=height;
 
-
 ctx.drawImage(img,0,0,width,height);
-
 
 canvas.toBlob(function(blob){
 
 if(!blob){
 
 result.innerText="Unable to compress this image.";
-
 return;
 
 }
 
-
 const url=URL.createObjectURL(blob);
-
 
 result.innerHTML=
 '<a class="download" href="'+url+'" download="quicktools-compressed.jpg">Download Compressed Image</a>';
-
 
 },"image/jpeg",0.7);
 
 };
 
-
 img.src=e.target.result;
 
 };
 
-
 reader.readAsDataURL(input.files[0]);
 
 }
-
 
 
 /* IMAGE RESIZER */
@@ -967,80 +1003,61 @@ document.getElementById("resizeHeight").value
 
 const result=document.getElementById("resizeResult");
 
-
 if(!input.files || !input.files[0]){
 
 result.innerText="Please select an image first.";
-
 return;
 
 }
-
 
 if(!width || !height || width<=0 || height<=0){
 
 result.innerText="Please enter valid width and height.";
-
 return;
 
 }
 
-
 const reader=new FileReader();
-
 
 reader.onload=function(e){
 
 const img=new Image();
 
-
 img.onload=function(){
 
 const canvas=document.createElement("canvas");
-
 const ctx=canvas.getContext("2d");
 
-
 canvas.width=width;
-
 canvas.height=height;
 
-
 ctx.drawImage(img,0,0,width,height);
-
 
 canvas.toBlob(function(blob){
 
 if(!blob){
 
 result.innerText="Unable to resize this image.";
-
 return;
 
 }
 
-
 const url=URL.createObjectURL(blob);
-
 
 result.innerHTML=
 '<a class="download" href="'+url+'" download="quicktools-resized.jpg">Download Resized Image</a>';
-
 
 },"image/jpeg",0.9);
 
 };
 
-
 img.src=e.target.result;
 
 };
 
-
 reader.readAsDataURL(input.files[0]);
 
 }
-
 
 
 /* AGE CALCULATOR */
@@ -1048,42 +1065,28 @@ reader.readAsDataURL(input.files[0]);
 function calculateAge(){
 
 const dobValue=document.getElementById("dob").value;
-
 const result=document.getElementById("result");
-
 
 if(!dobValue){
 
 result.innerText="Please select your date of birth.";
-
 return;
 
 }
 
-
 const dob=new Date(dobValue+"T00:00:00");
-
 const today=new Date();
-
 
 if(dob>today){
 
 result.innerText="Date of birth cannot be in the future.";
-
 return;
 
 }
 
-
-let years=
-today.getFullYear()-dob.getFullYear();
-
-let months=
-today.getMonth()-dob.getMonth();
-
-let days=
-today.getDate()-dob.getDate();
-
+let years=today.getFullYear()-dob.getFullYear();
+let months=today.getMonth()-dob.getMonth();
+let days=today.getDate()-dob.getDate();
 
 if(days<0){
 
@@ -1097,15 +1100,12 @@ today.getMonth(),
 
 }
 
-
 if(months<0){
 
 years--;
-
 months+=12;
 
 }
-
 
 result.innerText=
 "You are "+
@@ -1119,67 +1119,434 @@ days+
 }
 
 
-
 /* UNIT CONVERTER */
 
 function convertUnit(){
 
-const value=
-parseFloat(
+const value=parseFloat(
 document.getElementById("unitValue").value
 );
 
-const type=
-document.getElementById("unitType").value;
+const type=document.getElementById("unitType").value;
 
-const result=
-document.getElementById("unitResult");
-
+const result=document.getElementById("unitResult");
 
 if(isNaN(value)){
 
 result.innerText="Please enter a value.";
-
 return;
 
 }
 
-
 let answer;
-
 
 if(type==="km-miles")
 answer=value*0.621371;
 
-
 if(type==="miles-km")
 answer=value*1.60934;
-
 
 if(type==="kg-lb")
 answer=value*2.20462;
 
-
 if(type==="lb-kg")
 answer=value*0.453592;
-
 
 if(type==="cm-m")
 answer=value/100;
 
-
 if(type==="m-cm")
 answer=value*100;
 
+result.innerText="Result: "+answer.toFixed(2);
+
+}
+
+
+/* WORD COUNTER */
+
+function countWords(){
+
+const text=document.getElementById("wordText").value;
+
+const words=text.trim()==="" ? 0 : text.trim().split(/\s+/).length;
+
+const characters=text.length;
+
+const noSpaces=text.replace(/\s/g,"").length;
+
+document.getElementById("wordResult").innerText=
+"Words: "+
+words+
+" | Characters: "+
+characters+
+" | Characters without spaces: "+
+noSpaces;
+
+}
+
+
+/* PERCENTAGE */
+
+function calculatePercentage(){
+
+const value=parseFloat(
+document.getElementById("percentValue").value
+);
+
+const total=parseFloat(
+document.getElementById("percentTotal").value
+);
+
+const result=document.getElementById("percentResult");
+
+if(isNaN(value)||isNaN(total)){
+
+result.innerText="Please enter both values.";
+return;
+
+}
+
+if(total===0){
+
+result.innerText="Total cannot be zero.";
+return;
+
+}
+
+const percentage=(value/total)*100;
 
 result.innerText=
-"Result: "+
-answer.toFixed(2);
+percentage.toFixed(2)+"%";
+
+}
+
+
+/* GST */
+
+function calculateGST(){
+
+const price=parseFloat(
+document.getElementById("gstPrice").value
+);
+
+const rate=parseFloat(
+document.getElementById("gstRate").value
+);
+
+const result=document.getElementById("gstResult");
+
+if(isNaN(price)||price<0){
+
+result.innerText="Please enter a valid price.";
+return;
+
+}
+
+const gst=price*rate/100;
+const total=price+gst;
+
+result.innerText=
+"GST: ₹"+
+gst.toFixed(2)+
+" | Total: ₹"+
+total.toFixed(2);
+
+}
+
+
+/* EMI */
+
+function calculateEMI(){
+
+const principal=parseFloat(
+document.getElementById("loanAmount").value
+);
+
+const annualRate=parseFloat(
+document.getElementById("interestRate").value
+);
+
+const years=parseFloat(
+document.getElementById("loanYears").value
+);
+
+const result=document.getElementById("emiResult");
+
+if(isNaN(principal)||isNaN(annualRate)||isNaN(years)||
+principal<=0||annualRate<0||years<=0){
+
+result.innerText="Please enter valid loan details.";
+return;
+
+}
+
+const monthlyRate=annualRate/12/100;
+const months=years*12;
+
+let emi;
+
+if(monthlyRate===0){
+
+emi=principal/months;
+
+}else{
+
+emi=
+principal*
+monthlyRate*
+Math.pow(1+monthlyRate,months)/
+(Math.pow(1+monthlyRate,months)-1);
+
+}
+
+result.innerText=
+"Monthly EMI: ₹"+
+emi.toFixed(2);
+
+}
+
+
+/* BMI */
+
+function calculateBMI(){
+
+const weight=parseFloat(
+document.getElementById("bmiWeight").value
+);
+
+const heightCm=parseFloat(
+document.getElementById("bmiHeight").value
+);
+
+const result=document.getElementById("bmiResult");
+
+if(isNaN(weight)||isNaN(heightCm)||
+weight<=0||heightCm<=0){
+
+result.innerText="Please enter valid height and weight.";
+return;
+
+}
+
+const height=heightCm/100;
+
+const bmi=weight/(height*height);
+
+let category;
+
+if(bmi<18.5)
+category="Underweight";
+else if(bmi<25)
+category="Normal weight";
+else if(bmi<30)
+category="Overweight";
+else
+category="Obesity";
+
+result.innerText=
+"BMI: "+
+bmi.toFixed(2)+
+" | "+
+category;
+
+}
+
+
+/* QR CODE */
+
+function generateQR(){
+
+const text=document.getElementById("qrText").value.trim();
+
+const qr=document.getElementById("qrCode");
+
+const result=document.getElementById("qrResult");
+
+qr.innerHTML="";
+
+if(!text){
+
+result.innerText="Please enter text or a URL.";
+return;
+
+}
+
+new QRCode(qr,{
+
+text:text,
+width:200,
+height:200
+
+});
+
+result.innerText="QR code generated successfully.";
+
+}
+
+
+/* PASSWORD */
+
+let generatedPassword="";
+
+function generatePassword(){
+
+let length=parseInt(
+document.getElementById("passwordLength").value
+);
+
+const result=document.getElementById("passwordResult");
+
+if(isNaN(length)||length<4||length>50){
+
+result.innerText="Password length must be between 4 and 50.";
+return;
+
+}
+
+const chars=
+"ABCDEFGHIJKLMNOPQRSTUVWXYZ"+
+"abcdefghijklmnopqrstuvwxyz"+
+"0123456789"+
+"!@#$%^&*()_+-=[]{}";
+
+generatedPassword="";
+
+for(let i=0;i<length;i++){
+
+generatedPassword+=
+chars.charAt(
+Math.floor(Math.random()*chars.length)
+);
+
+}
+
+result.innerText=generatedPassword;
+
+}
+
+
+/* COPY PASSWORD */
+
+function copyPassword(){
+
+if(!generatedPassword){
+
+alert("Generate a password first.");
+return;
+
+}
+
+navigator.clipboard.writeText(generatedPassword)
+.then(function(){
+
+alert("Password copied.");
+
+})
+.catch(function(){
+
+alert("Unable to copy password.");
+
+});
+
+}
+
+
+/* IMAGE CROP */
+
+function cropImage(){
+
+const input=document.getElementById("cropInput");
+
+const width=parseInt(
+document.getElementById("cropWidth").value
+);
+
+const height=parseInt(
+document.getElementById("cropHeight").value
+);
+
+const result=document.getElementById("cropResult");
+
+if(!input.files || !input.files[0]){
+
+result.innerText="Please select an image first.";
+return;
+
+}
+
+if(!width||!height||width<=0||height<=0){
+
+result.innerText="Please enter valid crop width and height.";
+return;
+
+}
+
+const reader=new FileReader();
+
+reader.onload=function(e){
+
+const img=new Image();
+
+img.onload=function(){
+
+if(width>img.width||height>img.height){
+
+result.innerText=
+"Crop size cannot be larger than the original image.";
+return;
+
+}
+
+const canvas=document.createElement("canvas");
+
+const ctx=canvas.getContext("2d");
+
+canvas.width=width;
+canvas.height=height;
+
+const sourceX=(img.width-width)/2;
+const sourceY=(img.height-height)/2;
+
+ctx.drawImage(
+img,
+sourceX,
+sourceY,
+width,
+height,
+0,
+0,
+width,
+height
+);
+
+canvas.toBlob(function(blob){
+
+if(!blob){
+
+result.innerText="Unable to crop this image.";
+return;
+
+}
+
+const url=URL.createObjectURL(blob);
+
+result.innerHTML=
+'<a class="download" href="'+url+'" download="quicktools-cropped.jpg">Download Cropped Image</a>';
+
+},"image/jpeg",0.9);
+
+};
+
+img.src=e.target.result;
+
+};
+
+reader.readAsDataURL(input.files[0]);
 
 }
 
 </script>
-
 
 </body>
 </html>
